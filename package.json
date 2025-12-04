@@ -8,7 +8,7 @@
     "plugin/build"
   ],
   "scripts": {
-    "build": "expo-module build:plugin",
+    "build": "npm run build:plugin",
     "build:plugin": "expo-module build plugin",
     "clean": "expo-module clean",
     "test": "expo-module test plugin",
