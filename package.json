@@ -1,0 +1,41 @@
+{
+  "name": "dynatrace-expo-plugin",
+  "version": "0.0.1",
+  "description": "Expo config plugin for @dynatrace/react-native-plugin",
+  "main": "app.plugin.js",
+  "files": [
+    "app.plugin.js",
+    "plugin/build"
+  ],
+  "scripts": {
+    "build": "expo-module build:plugin",
+    "build:plugin": "expo-module build plugin",
+    "clean": "expo-module clean",
+    "test": "expo-module test plugin",
+    "prepare": "expo-module prepare",
+    "prepublishOnly": "expo-module prepublishOnly",
+    "format": "prettier --write ."
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "expo": "^54.0.0",
+    "expo-module-scripts": "^5.0.7",
+    "prettier": "^3.7.4",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@dynatrace/react-native-plugin": "*",
+    "expo": "*"
+  },
+  "peerDependenciesMeta": {
+    "expo": {
+      "optional": true
+    }
+  },
+  "license": "MIT"
+}

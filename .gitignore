@@ -1,0 +1,5 @@
+/.idea
+/build
+/plugin/build
+/plugin/tsconfig.tsbuildinfo
+/node_modules
