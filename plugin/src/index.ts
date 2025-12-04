@@ -76,9 +76,8 @@ const withDynatrace: ConfigPlugin<DynatracePluginProps> = (
 
     return config
   } catch (error) {
-    if (error instanceof Error)
-      throw new Error(`Failed to configure Dynatrace plugin: ${error.message}`)
-    else throw new Error('Failed to configure Dynatrace plugin')
+    const message = error instanceof Error ? error.message : String(error)
+    throw new Error(`Failed to configure Dynatrace plugin: ${message}`, { cause: error })
   }
 }
 
