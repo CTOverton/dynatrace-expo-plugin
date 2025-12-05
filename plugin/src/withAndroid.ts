@@ -16,7 +16,7 @@ const RUNTIME_GRADLE_LINE = `apply from: "../../node_modules/@dynatrace/react-na
 
 export const withAndroidConfiguration: ConfigPlugin<DynatracePluginProps> = (
   config,
-  props
+  props,
 ) => {
   const {
     applicationId,
@@ -32,7 +32,7 @@ export const withAndroidConfiguration: ConfigPlugin<DynatracePluginProps> = (
       const buildscriptIndex = contents.indexOf('buildscript {')
       if (buildscriptIndex === -1) {
         throw new Error(
-          'dynatrace-expo-plugin: Could not find "buildscript {" in android/build.gradle.'
+          'dynatrace-expo-plugin: Could not find "buildscript {" in android/build.gradle.',
         )
       }
 
@@ -49,7 +49,7 @@ export const withAndroidConfiguration: ConfigPlugin<DynatracePluginProps> = (
       const markerIndex = contents.indexOf(marker)
       if (markerIndex === -1) {
         throw new Error(
-          'dynatrace-expo-plugin: Could not find `apply plugin: "expo-root-project"` in android/build.gradle.'
+          'dynatrace-expo-plugin: Could not find `apply plugin: "expo-root-project"` in android/build.gradle.',
         )
       }
 
@@ -98,6 +98,9 @@ dynatrace {
             userOptIn ${userOptIn ? 'true' : 'false'}
             agentBehavior.startupLoadBalancing ${
               startupLoadBalancing ? 'true' : 'false'
+            }
+            userActions {
+                composeEnabled false
             }
         }
     }
